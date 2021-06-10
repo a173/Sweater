@@ -9,23 +9,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-<#--                <li class="nav-item">-->
-<#--&lt;#&ndash;                    <a class="nav-link active" aria-current="page" href="#">Home</a>&ndash;&gt;-->
-<#--                    <a class="nav-link" aria-current="page" href="/">Home</a>-->
-<#--                </li>-->
+                <#if user??>
                 <li class="nav-item">
-                    <#--                    <a class="nav-link active" aria-current="page" href="#">Home</a>-->
-                    <a class="nav-link" aria-current="page" href="/main">Messages</a>
+                    <a class="nav-link" aria-current="page" href="/user-messages/${currentUserId}">My messages</a>
                 </li>
+                </#if>
                 <#if isAdmin>
                 <li class="nav-item">
-                    <#--                    <a class="nav-link active" aria-current="page" href="#">Home</a>-->
                     <a class="nav-link" aria-current="page" href="/user">User list</a>
                 </li>
                 </#if>
             </ul>
-            <#if name!="unknown">
-                <div class="navbar-text">${name}</div>&nbsp;
+            <#if user??>
+                <div class="navbar-text"><a href="/user/profile">${name}</a></div>&nbsp;
                 <@l.logout />
             <#else>
                 <a class="btn btn-primary btn-sm" href="/registration" role="button">Sign up</a>&nbsp;

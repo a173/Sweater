@@ -1,14 +1,26 @@
 package ru.sweater.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
+import lombok.Data;
+import org.hibernate.validator.constraints.Length;
+import ru.sweater.domain.utils.MessageHelper;
+
+import java.util.HashSet;
+import java.util.Set;
+
+@Data
 @Entity
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotBlank(message = "Please fill the message")
+    @Length(max = 2048, message = "Message too long (more than 2kB)")
     private String text;
+    @Length(max = 255, message = "Tag too long (more than 255)")
     private String tag;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -16,6 +28,12 @@ public class Message {
     private User author;
 
     private String filename;
+
+    @ManyToMany
+    @JoinTable(name = "message_likes",
+              joinColumns = { @JoinColumn(name = "message_id") },
+              inverseJoinColumns = { @JoinColumn(name = "user_id")})
+    private Set<User> likes = new HashSet<>();
 
     public Message() {}
 
@@ -25,43 +43,7 @@ public class Message {
         this.tag = tag;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public String getTag() {
-        return tag;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public void setTag(String tag) {
-        this.tag = tag;
-    }
-
-    public String getAuthor() {
-        return author != null ? author.getUsername() : "<none>";
-    }
-
-    public void setAuthor(User author) {
-        this.author = author;
-    }
-
-    public String getFilename() {
-        return filename;
-    }
-
-    public void setFilename(String filename) {
-        this.filename = filename;
+    public String getAuthorName() {
+        return MessageHelper.getAuthorName(author);
     }
 }
