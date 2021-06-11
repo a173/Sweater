@@ -42,7 +42,11 @@ public class UserService implements UserDetailsService {
         return user;
     }
 
-    public void addUser(User user) {
+    public boolean addUser(User user) {
+        User userFromDb = userRepo.findByUsername(user.getUsername());
+
+        if (userFromDb != null) return false;
+
         user.setActive(true);
         user.setRoles(Collections.singleton(Role.USER));
         user.setActivationCode(UUID.randomUUID().toString());
@@ -50,6 +54,7 @@ public class UserService implements UserDetailsService {
         userRepo.save(user);
 
         sendMessage(user);
+        return true;
     }
 
     public boolean doubleUsername(User user) {
