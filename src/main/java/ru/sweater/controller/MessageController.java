@@ -9,7 +9,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
+import org.springframework.util.ObjectUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -73,7 +73,8 @@ public class MessageController {
         return "main";
     }
 
-    private void saveFile(@Valid Message message, @RequestParam("file") MultipartFile file) throws IOException {
+    private void saveFile(@Valid Message message,
+                          @RequestParam("file") MultipartFile file) throws IOException {
         if (file != null && !file.getOriginalFilename().isEmpty()) {
             File uploadDir = new File(uploadPath);
             if (!uploadDir.exists())
@@ -121,7 +122,7 @@ public class MessageController {
 
         if (!message.getAuthor().equals(currentUser))
             model.addAttribute("userError", "You are not the author of this post");
-        if (StringUtils.isEmpty(text))
+        if (ObjectUtils.isEmpty(text))
             model.addAttribute("textError", "Please fill the message");
         if (text.length() > 2048)
             model.addAttribute("textError", "Message too long (more than 2kB)");
@@ -131,7 +132,7 @@ public class MessageController {
             addVariable(author, currentUser, pageable, message, model);
             return "userMessages";
         }
-        if (!StringUtils.isEmpty(tag))
+        if (!ObjectUtils.isEmpty(tag))
             message.setTag(tag);
         message.setText(text);
         saveFile(message, file);

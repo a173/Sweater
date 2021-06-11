@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
+import org.springframework.util.ObjectUtils;
 import ru.sweater.domain.Role;
 import ru.sweater.domain.User;
 import ru.sweater.repos.UserRepo;
@@ -61,7 +61,7 @@ public class UserService implements UserDetailsService {
     }
 
     private void sendMessage(User user) {
-        if (!StringUtils.isEmpty(user.getEmail())) {
+        if (!ObjectUtils.isEmpty(user.getEmail())) {
             String message = String.format(
                     "Hello, %s! \nWelcome to Sweater. " +
                             "Please, visit next link: %s/activate/%s",
@@ -102,7 +102,7 @@ public class UserService implements UserDetailsService {
     private void EmailChanged (User user, String email) {
         user.setEmail(email);
 
-        if (!StringUtils.isEmpty(email))
+        if (!ObjectUtils.isEmpty(email))
             user.setActivationCode(UUID.randomUUID().toString());
     }
 
@@ -135,7 +135,7 @@ public class UserService implements UserDetailsService {
         if (isEmailChanged)
             EmailChanged(user, email);
 
-        if (!StringUtils.isEmpty(password))
+        if (!ObjectUtils.isEmpty(password))
             user.setPassword(passwordEncoder.encode(password));
 
         userRepo.save(user);
