@@ -5,7 +5,7 @@
     <form class="row row-cols-lg-auto g-2 align-items-center" method="get" action="main"
           xmlns="http://www.w3.org/1999/html">
         <div class="col-auto">
-            <input type="text" name="filter" class="form-control" value="${RequestParameters.filter!}" placeholder="Search by tag">
+            <input type="text" name="filter" class="form-control" value="${RequestParameters.filter!}" placeholder="Search by tag" />
         </div>
         <div class="col-auto">
             <button type="submit" class="btn btn-primary">Search</button>

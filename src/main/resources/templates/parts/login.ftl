@@ -2,28 +2,28 @@
 <form action="${path}" method="post">
     <div class="form-floating mb-3">
         <input class="form-control ${(usernameError??)?string('is-invalid', '')}"
-               value="<#if user??>${user.username}</#if>" id="floatingInput" type="text" name="username" placeholder="username"/>
+               value="<#if user??>${user.username}</#if>" id="floatingInput" type="text" name="username" placeholder="username" />
         <label for="floatingInput">Username</label>
         <#if isRegisterForm && usernameError??><div class="invalid-feedback">${usernameError}</div></#if>
     </div>
     <#if isRegisterForm>
         <div class="form-floating mb-3">
             <input class="form-control ${(emailError??)?string('is-invalid', '')}"
-                   value="<#if user??>${user.email}</#if>" id="floatingInput2" type="email" name="email" placeholder="email"/>
+                   value="<#if user??>${user.email}</#if>" id="floatingInput2" type="email" name="email" placeholder="email" />
             <label for="floatingInput2">Email</label>
             <#if isRegisterForm && emailError??><div class="invalid-feedback">${emailError}</div></#if>
         </div>
     </#if>
     <div class="form-floating mb-3">
         <input class="form-control ${(passwordError??)?string('is-invalid', '')}"
-               id="floatingPassword" type="password" name="password" placeholder="password"/>
+               id="floatingPassword" type="password" name="password" placeholder="password" />
         <label for="floatingPassword">Password</label>
         <#if isRegisterForm && passwordError??><div class="invalid-feedback">${passwordError}</div></#if>
     </div>
     <#if isRegisterForm>
         <div class="form-floating mb-3">
             <input class="form-control ${(password2Error??)?string('is-invalid', '')}"
-                   id="floatingPassword2" type="password" name="password2" placeholder="Retype password"/>
+                   id="floatingPassword2" type="password" name="password2" placeholder="Retype password" />
             <label for="floatingPassword2">Password</label>
             <#if isRegisterForm && password2Error??><div class="invalid-feedback">${password2Error}</div></#if>
         </div>

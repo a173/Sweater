@@ -8,6 +8,6 @@
         </div>
     <#else>
         <div class="mb-1">ADD new user</div>
-        <@l.login "/registration" true/>
+        <@l.login "/registration" true />
     </#if>
 </@c.page>

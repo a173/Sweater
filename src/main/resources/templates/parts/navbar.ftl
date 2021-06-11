@@ -21,7 +21,7 @@
                 </#if>
             </ul>
             <#if user??>
-                <div class="navbar-text"><a href="/user/profile">${name}</a></div>&nbsp;
+                <div class="navbar-text"><a href="/user/profile">${name}</a></div>&#160;
                 <@l.logout />
             <#else>
                 <a class="btn btn-primary btn-sm" href="/registration" role="button">Sign up</a>&nbsp;

@@ -13,7 +13,7 @@
         </div>
         <div class="col-3">
             <div class="input-group">
-                <input type="file" name="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                <input type="file" name="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" />
             </div>
         </div>
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
