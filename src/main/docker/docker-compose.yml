@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  app:
+    image: 'docker-spring-boot-postgres:latest'
+    ports:
+      - "8080:8080"
+    build:
+      context: .
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/sweater
+      - SPRING_DATASOURCE_USERNAME=acaryn
+      - SPRING_DATASOURCE_PASSWORD=""
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+  db:
+    image: 'postgres:13.1-alpine'
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=""
+      - POSTGRES_USER=acaryn
+      - POSTGRES_DB=sweater

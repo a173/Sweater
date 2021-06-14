@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/acaryn/Downloads/sweater</OriginalElement>
+  <nodes>
+    <node x="793.7864583333334" y="1080.0">ru.sweater.config.WebSecurityConfig</node>
+    <node x="218.5" y="919.0">ru.sweater.repos.MessageRepo</node>
+    <node x="114.25" y="1254.0">ru.sweater.controller.MessageController</node>
+    <node x="318.41145833333337" y="274.0">ru.sweater.domain.User</node>
+    <node x="500.78645833333337" y="1058.0">ru.sweater.service.UserServiceTest</node>
+    <node x="1086.7864583333335" y="1058.0">ru.sweater.controller.RegistrationController</node>
+    <node x="66.0" y="600.0">ru.sweater.domain.dto.MessageDto</node>
+    <node x="1157.0" y="1571.0">ru.sweater.domain.utils.MessageHelper</node>
+    <node x="1568.7864583333335" y="0.0">ru.sweater.config.MailConfig</node>
+    <node x="0.0" y="1426.0">ru.sweater.MessageControllerTest</node>
+    <node x="673.8489583333333" y="690.0">ru.sweater.repos.UserRepo</node>
+    <node x="249.00000000000003" y="1426.0">ru.sweater.LoginTest</node>
+    <node x="375.0" y="655.0">ru.sweater.service.MailSender</node>
+    <node x="509.2083333333335" y="55.0">ru.sweater.domain.Role</node>
+    <node x="856.015625" y="862.0">ru.sweater.service.UserService</node>
+    <node x="254.20833333333348" y="0.0">ru.sweater.domain.Message</node>
+    <node x="266.0" y="1571.0">ru.sweater.config.MvcConfig</node>
+    <node x="715.0" y="1571.0">ru.sweater.config.EncriptionConfig</node>
+    <node x="940.0" y="1571.0">ru.sweater.WebApplication</node>
+    <node x="1373.0" y="1571.0">ru.sweater.controller.ControllerUtils</node>
+    <node x="1327.7864583333335" y="1091.0">ru.sweater.controller.UserController</node>
+    <node x="470.0" y="1571.0">ru.sweater.util.RedirectInterceptor</node>
+    <node x="0.0" y="1571.0">ru.sweater.domain.dto.CaptchaResponseDto</node>
+    <node x="66.5" y="1091.0">ru.sweater.service.MessageService</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ru.sweater.service.UserServiceTest" target="ru.sweater.service.UserService" relationship="TO_ONE">
+      <point x="91.0" y="-72.0" />
+      <point x="728.2864583333334" y="1032.0" />
+      <point x="992.515625" y="1032.0" />
+      <point x="0.0" y="72.0" />
+    </edge>
+    <edge source="ru.sweater.service.UserServiceTest" target="ru.sweater.service.MailSender" relationship="TO_ONE">
+      <point x="-91.0" y="-72.0" />
+      <point x="546.2864583333334" y="1032.0" />
+      <point x="482.0" y="1032.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="ru.sweater.domain.dto.MessageDto" target="ru.sweater.domain.User" relationship="DEPENDENCY">
+      <point x="72.25" y="-105.0" />
+      <point x="282.75" y="580.0" />
+      <point x="737.8489583333333" y="580.0" />
+      <point x="737.8489583333333" y="570.0" />
+      <point x="470.6614583333334" y="570.0" />
+      <point x="50.75" y="138.0" />
+    </edge>
+    <edge source="ru.sweater.controller.RegistrationController" target="ru.sweater.service.UserService" relationship="TO_ONE">
+      <point x="0.0" y="-72.0" />
+      <point x="1197.2864583333335" y="1032.0" />
+      <point x="992.515625" y="1032.0" />
+      <point x="0.0" y="72.0" />
+    </edge>
+    <edge source="ru.sweater.controller.UserController" target="ru.sweater.service.UserService" relationship="TO_ONE">
+      <point x="0.0" y="-39.0" />
+      <point x="1425.7864583333335" y="1032.0" />
+      <point x="992.515625" y="1032.0" />
+      <point x="0.0" y="72.0" />
+    </edge>
+    <edge source="ru.sweater.LoginTest" target="ru.sweater.controller.MessageController" relationship="TO_ONE">
+      <point x="0.0" y="-50.0" />
+      <point x="362.0" y="1401.0" />
+      <point x="238.25" y="1401.0" />
+      <point x="0.0" y="61.0" />
+    </edge>
+    <edge source="ru.sweater.service.UserService" target="ru.sweater.service.MailSender" relationship="TO_ONE">
+      <point x="-91.0" y="-72.0" />
+      <point x="901.515625" y="831.0" />
+      <point x="482.0" y="831.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="ru.sweater.MessageControllerTest" target="ru.sweater.controller.MessageController" relationship="TO_ONE">
+      <point x="0.0" y="-50.0" />
+      <point x="114.5" y="1401.0" />
+      <point x="238.25" y="1401.0" />
+      <point x="0.0" y="61.0" />
+    </edge>
+    <edge source="ru.sweater.service.MessageService" target="ru.sweater.domain.dto.MessageDto" relationship="DEPENDENCY">
+      <point x="-55.5" y="-39.0" />
+      <point x="122.0" y="841.0" />
+      <point x="210.5" y="841.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="ru.sweater.domain.Message" target="ru.sweater.domain.User" relationship="TO_MANY">
+      <point x="0.0" y="105.0" />
+      <point x="371.7083333333335" y="232.0" />
+      <point x="330.2083333333335" y="232.0" />
+      <point x="330.2083333333335" y="252.0" />
+      <point x="369.1614583333335" y="252.0" />
+      <point x="-50.74999999999994" y="-138.0" />
+    </edge>
+    <edge source="ru.sweater.domain.User" target="ru.sweater.domain.Message" relationship="TO_MANY">
+      <point x="16.916666666666742" y="-138.0" />
+      <point x="436.8281250000001" y="232.0" />
+      <point x="465.7083333333335" y="232.0" />
+      <point x="94.0" y="105.0" />
+    </edge>
+    <edge source="ru.sweater.repos.UserRepo" target="ru.sweater.domain.User" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.0" />
+      <point x="737.8489583333333" y="570.0" />
+      <point x="470.6614583333334" y="570.0" />
+      <point x="50.75" y="138.0" />
+    </edge>
+    <edge source="ru.sweater.domain.User" target="ru.sweater.domain.Message" relationship="DEPENDENCY">
+      <point x="-16.916666666666572" y="-138.0" />
+      <point x="402.99479166666686" y="252.0" />
+      <point x="418.7083333333335" y="252.0" />
+      <point x="47.0" y="105.0" />
+    </edge>
+    <edge source="ru.sweater.domain.Message" target="ru.sweater.domain.User" relationship="DEPENDENCY">
+      <point x="-94.0" y="105.0" />
+      <point x="277.7083333333335" y="242.0" />
+      <point x="335.3281250000001" y="242.0" />
+      <point x="-84.58333333333331" y="-138.0" />
+    </edge>
+    <edge source="ru.sweater.controller.MessageController" target="ru.sweater.repos.MessageRepo" relationship="TO_ONE">
+      <point x="62.0" y="-61.0" />
+      <point x="300.25" y="1228.0" />
+      <point x="299.0" y="1228.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="ru.sweater.domain.Message" target="ru.sweater.domain.User" relationship="TO_ONE">
+      <point x="-47.0" y="105.0" />
+      <point x="324.7083333333335" y="232.0" />
+      <point x="330.2083333333335" y="232.0" />
+      <point x="330.2083333333335" y="252.0" />
+      <point x="369.1614583333335" y="252.0" />
+      <point x="-50.74999999999994" y="-138.0" />
+    </edge>
+    <edge source="ru.sweater.service.MessageService" target="ru.sweater.repos.MessageRepo" relationship="TO_ONE">
+      <point x="55.5" y="-39.0" />
+      <point x="233.0" y="1032.0" />
+      <point x="299.0" y="1032.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="ru.sweater.controller.MessageController" target="ru.sweater.service.MessageService" relationship="TO_ONE">
+      <point x="-62.0" y="-61.0" />
+      <point x="176.25" y="1228.0" />
+      <point x="177.5" y="1228.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="ru.sweater.domain.User" target="ru.sweater.domain.Role" relationship="TO_MANY">
+      <point x="84.58333333333343" y="-138.0" />
+      <point x="504.49479166666686" y="252.0" />
+      <point x="579.7083333333335" y="252.0" />
+      <point x="23.5" y="50.0" />
+    </edge>
+    <edge source="ru.sweater.service.UserService" target="ru.sweater.repos.UserRepo" relationship="TO_ONE">
+      <point x="0.0" y="-72.0" />
+      <point x="992.515625" y="841.0" />
+      <point x="737.8489583333333" y="841.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="ru.sweater.domain.dto.MessageDto" target="ru.sweater.domain.User" relationship="TO_ONE">
+      <point x="-72.25" y="-105.0" />
+      <point x="138.25" y="570.0" />
+      <point x="369.16145833333337" y="570.0" />
+      <point x="-50.75" y="138.0" />
+    </edge>
+    <edge source="ru.sweater.domain.User" target="ru.sweater.domain.Role" relationship="DEPENDENCY">
+      <point x="50.75000000000006" y="-138.0" />
+      <point x="470.6614583333335" y="242.0" />
+      <point x="532.7083333333335" y="242.0" />
+      <point x="-23.5" y="50.0" />
+    </edge>
+    <edge source="ru.sweater.service.UserService" target="ru.sweater.domain.User" relationship="DEPENDENCY">
+      <point x="91.0" y="-72.0" />
+      <point x="1083.515625" y="841.0" />
+      <point x="1039.5520833333335" y="841.0" />
+      <point x="1039.5520833333335" y="580.0" />
+      <point x="737.8489583333333" y="580.0" />
+      <point x="737.8489583333333" y="570.0" />
+      <point x="470.6614583333334" y="570.0" />
+      <point x="50.75" y="138.0" />
+    </edge>
+    <edge source="ru.sweater.service.UserServiceTest" target="ru.sweater.repos.UserRepo" relationship="TO_ONE">
+      <point x="0.0" y="-72.0" />
+      <point x="637.2864583333334" y="1032.0" />
+      <point x="673.0" y="1032.0" />
+      <point x="673.0" y="841.0" />
+      <point x="737.8489583333333" y="841.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="ru.sweater.config.WebSecurityConfig" target="ru.sweater.service.UserService" relationship="TO_ONE">
+      <point x="0.0" y="-50.0" />
+      <point x="930.2864583333334" y="1032.0" />
+      <point x="992.515625" y="1032.0" />
+      <point x="0.0" y="72.0" />
+    </edge>
+    <edge source="ru.sweater.repos.MessageRepo" target="ru.sweater.domain.dto.MessageDto" relationship="DEPENDENCY">
+      <point x="0.0" y="-15.0" />
+      <point x="299.0" y="841.0" />
+      <point x="210.5" y="841.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.6812536960378475" showDependencies="true" x="832.5" y="835.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

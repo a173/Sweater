@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class UserService implements UserDetailsService {
-    @Value("${my.url}")
+    @Value("${hostname}")
     private String myUrl;
 
     @Autowired
@@ -69,7 +69,7 @@ public class UserService implements UserDetailsService {
         if (!ObjectUtils.isEmpty(user.getEmail())) {
             String message = String.format(
                     "Hello, %s! \nWelcome to Sweater. " +
-                            "Please, visit next link: %s/activate/%s",
+                            "Please, visit next link: http://%s/activate/%s",
                     user.getUsername(),
                     myUrl,
                     user.getActivationCode()
